@@ -1,4 +1,5 @@
 /* -------- DOCTOR UPDATE -------- */
+
 const updateButton = document.getElementById("updateBtn");
 const patientStatus = document.getElementById("patient-status");
 const timeline = document.getElementById("timeline");
@@ -14,13 +15,12 @@ updateButton.addEventListener("click", function () {
       if (!doctorUpdateAdded) {
          timeline.innerHTML +=
             "<li><strong>11:30 AM:</strong> Doctor completed today's rounds.</li>";
+
          doctorUpdateAdded = true;
       }
 
-   } else {
-
-      patientStatus.textContent = "Waiting for Update";
-
+      updateButton.textContent = "Updated ✓";
+      updateButton.disabled = true;
    }
 
 });
