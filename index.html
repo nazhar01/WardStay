@@ -3,101 +3,142 @@
 
 <head>
     <title>WardStay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="app-container">
-        <!-- HEADER -->
-        <header class="top-bar">
-            <h1>WardStay</h1>
-        </header>
 
-        <!-- PATIENT OVERVIEW -->
-        <section class="hero-card">
-            <div class="section-tag">
-                Patient Overview
-            </div>
-            <p><strong>Patient Name:</strong> [Patient Name]</p>
-            <p><strong>Date of Admission:</strong> [Date]</p>
-            <p><strong>Reason for Admission:</strong> [Reason]</p>
-            <p><strong>Scheduled Operation Date:</strong> [Date]</p>
-        </section>
+    <div class="app-shell">
 
-        <!-- DASHBOARD CARDS -->
-        <section class="card-grid">
-
-            <!-- CAREGIVER NOTES -->
-            <div class="card">
-                <h3>Caregiver Notes</h3>
-                <textarea placeholder="Patient Notes"></textarea>
-                <button>Save Notes</button>
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo-brand">
+                <span>Ward</span>Stay
             </div>
 
-            <!-- VITAL SIGNS -->
-            <div class="card">
-                <h3>Vital Signs</h3>
-                <p><strong>Blood Pressure:</strong> <span class="status-normal">118/76 </span></p>
-                <p><strong>Glucose Level:</strong> <span class="status-warning">7.8 mmol/L</span></p>
-                <p><strong>HbA1c:</strong> <span class="status-danger">8.5%</span></p>
-            </div>
+            <nav class="sidebar-nav">
+                <button>🏠 Dashboard</button>
+                <button>👤 Patient</button>
+                <button>💊 Medication</button>
+                <button>📝 Caregiver Notes</button>
+                <button>📅 Timeline</button>
+                <button>⚙ Settings</button>
+            </nav>
+        </aside>
 
-            <!-- MEDICATION TRACKER -->
-            <div class="card">
-                <h3>Medication Tracker</h3>
-                <p><strong>Medication:</strong> [Medication Name]</p>
-                <p><strong>Purpose:</strong> [Why this medication is taken]</p>
-                <p><strong>Schedule:</strong> [Morning / Afternoon / Night]</p>
-            </div>
 
-            <!-- DOCTOR UPDATES -->
-            <div class="card">
-                <h3>Doctor Updates</h3>
-                <p><strong>Current Status:</strong><span id="patient-status">Waiting for Update</span></p>
-                <p><strong>Check-ups Done:</strong> [Blood Test, Ultrasound, etc.]</p>
-                <p><strong>Responsible Specialist:</strong> [Specialist Name]</p>
-                <button id="updateBtn">Update Status</button>
-            </div>
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
 
-            <!-- PATIENT TIMELINE -->
-            <div class="card">
-                <h3>Patient Timeline</h3>
-                <ul id="timeline">
-                    <li><strong>09:00 AM:</strong> Blood pressure is being monitored.</li>
-                    <li><strong>10:00 AM:</strong> Glucose level is being monitored.</li>
-                    <li><strong>11:00 AM:</strong> HbA1c test results are pending.</li>
-                </ul>
-            </div>
+            <!-- TOP BAR -->
+            <header class="dashboard-topbar">
+                <div><strong>Patient:</strong> <span>Faridah Binti Haji Zarkashi</span></div>
+                <div><strong>Ward:</strong> <span>5A</span></div>
+                <div><strong>Room:</strong> <span>A-12</span></div>
+                <div><strong>Status:</strong> <span class="status-normal">● Stable</span></div>
+            </header>
 
-            <!-- TESTS & CHECK-UPS -->
-            <div class="card">
-                <h3>Tests & Check-ups</h3>
-                <p><strong>Test Name:</strong> [HbA1c Test]</p>
-                <p><strong>Purpose:</strong> [What this test checks]</p>
-                <p><strong>Simple Explanation:</strong> [Layman explanation]</p>
-            </div>
 
-            <!-- DOCUMENTS -->
-            <div class="card">
-                <h3>Documents</h3>
-                <ul>
-                    <li>Lab Results</li>
-                    <li>Prescriptions</li>
-                    <li>Appointment Slips</li>
-                    <li>Discharge Summary</li>
-                </ul>
-            </div>
+            <!-- DASHBOARD WORKSPACE -->
+            <section class="dashboard-content">
 
-            <!-- ANNOUNCEMENTS -->
-            <div class="card">
-                <h3>Announcements</h3>
-                <p>Medication round starts at 9:00 AM.</p>
-                <p>Please prepare any questions for the nurse.</p>
-            </div>
-        </section>
+                <!-- PATIENT OVERVIEW -->
+                <section class="hero-card">
+                    <div class="section-tag">Patient Overview</div>
+
+                    <p><strong>Patient Name:</strong>Faridah Binti Haji Zarkashi</p>
+                    <p><strong>Date of Admission:</strong> 5th December 2025</p>
+                    <p><strong>Reason for Admission:</strong> Hysterectomy </p>
+                    <p><strong>Scheduled Operation Date:</strong> 7th December 2025 </p>
+                </section>
+
+
+                <!-- DASHBOARD CARDS -->
+                <section class="card-grid">
+
+                    <!-- CAREGIVER NOTES -->
+                    <div class="card">
+                        <h3>Caregiver Notes</h3>
+                        <textarea placeholder="Patient Notes"></textarea>
+                        <button>Save Notes</button>
+                    </div>
+
+                    <!-- VITAL SIGNS -->
+                    <div class="card">
+                        <h3>Vital Signs</h3>
+                        <p><strong>Blood Pressure:</strong> <span class="status-normal">118/76</span></p>
+                        <p><strong>Glucose Level:</strong> <span class="status-warning">7.8 mmol/L</span></p>
+                        <p><strong>HbA1c:</strong> <span class="status-danger">8.5%</span></p>
+                    </div>
+
+                    <!-- MEDICATION TRACKER -->
+                    <div class="card">
+                        <h3>Medication Tracker</h3>
+                        <p><strong>Medication:</strong> Metropolol </p>
+                        <p><strong>Purpose:</strong> High Blood Pressure</p>
+                        <p><strong>Schedule:</strong> Morning or when needed ( Preferably before blood pressure
+                            morning reading) </p>
+                    </div>
+
+                    <!-- DOCTOR UPDATES -->
+                    <div class="card">
+                        <h3>Doctor Updates</h3>
+                        <p><strong>Current Status:</strong> <span id="patient-status">Waiting for Update</span></p>
+                        <p><strong>Check-ups Done:</strong> Blood Pressure, Glucose Reading </p>
+                        <p><strong>Responsible Specialist:</strong> [Specialist Name]</p>
+                        <button id="updateBtn">Update Status</button>
+                    </div>
+
+                    <!-- PATIENT TIMELINE -->
+                    <div class="card">
+                        <h3>Patient Timeline</h3>
+                        <ul id="timeline">
+                            <li><strong>09:00 AM:</strong> Blood pressure is being monitored.</li>
+                            <li><strong>10:00 AM:</strong> Glucose level is being monitored.</li>
+                            <li><strong>11:00 AM:</strong> HbA1c test results are pending.</li>
+                        </ul>
+                    </div>
+
+                    <!-- TESTS & CHECK-UPS -->
+                    <div class="card">
+                        <h3>Tests & Check-ups</h3>
+                        <p><strong>Test Name:</strong> HbA1c Test</p>
+                        <p><strong>Purpose:</strong> Checks average blood sugar levels over the past 2-3 months</p>
+                        <p><strong>Simple Explanation:</strong> This test helps doctors understand how well your
+                            diabetes is being managed.</p>
+                    </div>
+
+                    <!-- DOCUMENTS -->
+                    <div class="card">
+                        <h3>Documents</h3>
+                        <ul>
+                            <li>Lab Results</li>
+                            <li>Prescriptions</li>
+                            <li>Appointment Slips</li>
+                            <li>Discharge Summary</li>
+                        </ul>
+                    </div>
+
+                    <!-- ANNOUNCEMENTS -->
+                    <div class="card">
+                        <h3>Announcements</h3>
+                        <p>Medication round starts at 9:00 AM.</p>
+                        <p>Please prepare any questions for the nurse.</p>
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
 
     </div>
+
     <script src="script.js"></script>
+
 </body>
 
 </html>
