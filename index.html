@@ -20,8 +20,8 @@
             </div>
 
             <nav class="sidebar-nav">
-                <button>🏠 Dashboard</button>
-                <button>👤 Patient</button>
+                <button id="dashboardBtn" class="active">🏠 Dashboard</button>
+                <button id="patientBtn">👤 Patient</button>
                 <button>💊 Medication</button>
                 <button>📝 Caregiver Notes</button>
                 <button>📅 Timeline</button>
@@ -43,7 +43,7 @@
 
 
             <!-- DASHBOARD WORKSPACE -->
-            <section class="dashboard-content">
+            <section class="dashboard-content" id="dashboardView">
 
                 <!-- PATIENT OVERVIEW -->
                 <section class="hero-card">
@@ -54,7 +54,6 @@
                     <p><strong>Reason for Admission:</strong> Hysterectomy </p>
                     <p><strong>Scheduled Operation Date:</strong> 7th December 2025 </p>
                 </section>
-
 
                 <!-- DASHBOARD CARDS -->
                 <section class="card-grid">
@@ -88,7 +87,7 @@
                         <h3>Doctor Updates</h3>
                         <p><strong>Current Status:</strong> <span id="patient-status">Waiting for Update</span></p>
                         <p><strong>Check-ups Done:</strong> Blood Pressure, Glucose Reading </p>
-                        <p><strong>Responsible Specialist:</strong> [Specialist Name]</p>
+                        <p><strong>Responsible Specialist:</strong> Dr. Aina Rashid</p>
                         <button id="updateBtn">Update Status</button>
                     </div>
 
@@ -133,6 +132,22 @@
 
             </section>
 
+            <!-- PATIENT VIEW -->
+            <section class="patient-view hidden" id="patientView">
+
+                <div class="hero-card">
+                    <div class="section-tag">Patient Details</div>
+
+                    <h2>Faridah Binti Haji Zarkashi</h2>
+
+                    <p><strong>Ward:</strong> 5A</p>
+                    <p><strong>Room:</strong> A-12</p>
+                    <p><strong>Date of Admission:</strong> 5th December 2025</p>
+                    <p><strong>Reason for Admission:</strong> Hysterectomy</p>
+                    <p><strong>Scheduled Operation:</strong> 7th December 2025</p>
+
+                </div>
+
         </main>
 
     </div>
@@ -141,4 +156,4 @@
 
 </body>
 
-</html>
+</html

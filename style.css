@@ -155,22 +155,8 @@ button:hover {
 }
 
 /* TIMELINE */
-#timeline {
-    list-style-type: none;
-    padding: 0;
-}
-
 #timeline li {
     margin-bottom: 16px;
-}
-
-#timeline strong {
-    /* CHANGED: Forest green text for timeline highlights */
-    color: #2D3A34;
-}
-
-#timeline li {
-    /* CHANGED: Muted green accent line */
     border-left: 3px solid #5A7A68;
     padding-left: 16px;
 }
@@ -211,7 +197,21 @@ button:hover {
     color: white;
 }
 
+/* ACTIVE NAVIGATION */
+
+.sidebar-nav button.active,
+.sidebar-nav button.active:hover {
+    background-color: #5A7A68;
+    color: white;
+}
+
 .main-content {
     flex: 1;
     padding: 24px;
+}
+
+/* VIEW CONTROL */
+
+.hidden {
+    display: none;
 }

@@ -24,3 +24,33 @@ updateButton.addEventListener("click", function () {
    }
 
 });
+/* ---------- DASHBOARD NAVIGATION ---------- */
+
+const dashboardButton = document.getElementById("dashboardBtn");
+const patientButton = document.getElementById("patientBtn");
+
+const dashboardView = document.getElementById("dashboardView");
+const patientView = document.getElementById("patientView");
+
+patientButton.addEventListener("click", function () {
+
+   dashboardView.classList.add("hidden");
+   patientView.classList.remove("hidden");
+
+   dashboardButton.classList.remove("active");
+   patientButton.classList.add("active");
+
+});
+
+dashboardButton.addEventListener("click", function () {
+
+   patientView.classList.add("hidden");
+   dashboardView.classList.remove("hidden");
+
+   patientButton.classList.remove("active");
+   dashboardButton.classList.add("active");
+
+});
+
+
+
