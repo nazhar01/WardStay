@@ -22,10 +22,10 @@
             <nav class="sidebar-nav">
                 <button id="dashboardBtn" class="active">🏠 Dashboard</button>
                 <button id="patientBtn">👤 Patient</button>
-                <button>💊 Medication</button>
-                <button>📝 Caregiver Notes</button>
-                <button>📅 Timeline</button>
-                <button>⚙ Settings</button>
+                <button id="medicationBtn">💊 Medication</button>
+                <button id="notesBtn">📝 Caregiver Notes</button>
+                <button id="timelineBtn">📅 Timeline</button>
+                <button id="settingsBtn">⚙ Settings</button>
             </nav>
         </aside>
 
@@ -145,10 +145,55 @@
                     <p><strong>Date of Admission:</strong> 5th December 2025</p>
                     <p><strong>Reason for Admission:</strong> Hysterectomy</p>
                     <p><strong>Scheduled Operation:</strong> 7th December 2025</p>
+                </div>
+            </section>
+
+            <!-- MEDICATION VIEW -->
+            <section class="medication-view hidden" id="medicationView">
+
+                <div class="hero-card">
+                    <div class="section-tag">Medication Tracker</div>
+
+                    <h2>Patient Medication</h2>
+                    <p><strong>Medication:</strong> [Medication Name]</p>
+                    <p><strong>Purpose:</strong> [Medication Purpose]</p>
+                    <p><strong>Schedule:</strong> [Morning / Afternoon / Night]</p>
 
                 </div>
 
-        </main>
+            </section>
+
+            <!-- CAREGIVER NOTES VIEW -->
+            <section class="notes-view hidden" id="notesView">
+
+                <div class="hero-card">
+                    <div class="section-tag">Caregiver Notes</div>
+
+                    <h2>Patient Care Notes</h2>
+                    <p>Record important observations and reminders.</p>
+
+                    <textarea placeholder="Write your notes here..."></textarea>
+                    <button>Save Notes</button>
+                </div>
+
+            </section>
+
+            <!-- TIMELINE VIEW -->
+            <section class="timeline-view hidden" id="timelineView">
+
+                <div class="hero-card">
+                    <div class="section-tag">Patient Timeline</div>
+
+                    <h2>Hospital Updates</h2>
+                    <p>Follow important events throughout the patient's stay.</p>
+
+                    <ul id="timelineDetails"></ul>
+                </div>
+
+            </section>
+    </div>
+
+    </main>
 
     </div>
 

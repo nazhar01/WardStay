@@ -28,29 +28,54 @@ updateButton.addEventListener("click", function () {
 
 const dashboardButton = document.getElementById("dashboardBtn");
 const patientButton = document.getElementById("patientBtn");
+const medicationButton = document.getElementById("medicationBtn");
+const notesButton = document.getElementById("notesBtn");
+const timelineButton = document.getElementById("timelineBtn");
 
 const dashboardView = document.getElementById("dashboardView");
 const patientView = document.getElementById("patientView");
+const medicationView = document.getElementById("medicationView");
+const notesView = document.getElementById("notesView");
+const timelineView = document.getElementById("timelineView");
 
-patientButton.addEventListener("click", function () {
+function switchView(selectedView, selectedButton) {
 
+   // Hide all views
    dashboardView.classList.add("hidden");
-   patientView.classList.remove("hidden");
+   patientView.classList.add("hidden");
+   medicationView.classList.add("hidden");
+   notesView.classList.add("hidden");
+   timelineView.classList.add("hidden");
 
+   // Remove all active highlights
    dashboardButton.classList.remove("active");
-   patientButton.classList.add("active");
+   patientButton.classList.remove("active");
+   medicationButton.classList.remove("active");
+   notesButton.classList.remove("active");
+   timelineButton.classList.remove("active");
 
-});
+   // Show selected view and highlight its button
+   selectedView.classList.remove("hidden");
+   selectedButton.classList.add("active");
+
+}
 
 dashboardButton.addEventListener("click", function () {
-
-   patientView.classList.add("hidden");
-   dashboardView.classList.remove("hidden");
-
-   patientButton.classList.remove("active");
-   dashboardButton.classList.add("active");
-
+   switchView(dashboardView, dashboardButton);
 });
 
+patientButton.addEventListener("click", function () {
+   switchView(patientView, patientButton);
+});
 
+medicationButton.addEventListener("click", function () {
+   switchView(medicationView, medicationButton);
+});
 
+notesButton.addEventListener("click", function () {
+   switchView(notesView, notesButton);
+});
+
+timelineButton.addEventListener("click", function () {
+   switchView(timelineView, timelineButton);
+});
