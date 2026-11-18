@@ -79,3 +79,150 @@ notesButton.addEventListener("click", function () {
 timelineButton.addEventListener("click", function () {
    switchView(timelineView, timelineButton);
 });
+/* ---------- CAREGIVER NOTES ---------- */
+
+const noteInput = document.getElementById("noteInput");
+const saveNoteButton = document.getElementById("saveNoteBtn");
+const notesList = document.getElementById("notesList");
+let notes = JSON.parse(
+   localStorage.getItem("wardStayNotes")
+) || [];
+function showNote(note) {
+
+   const newNote = document.createElement("div");
+   newNote.classList.add("note-card");
+
+   const noteDate = document.createElement("small");
+   noteDate.textContent = note.date;
+
+   const noteContent = document.createElement("p");
+   noteContent.textContent = note.text;
+
+   const editButton = document.createElement("button");
+   editButton.textContent = "Edit";
+
+   editButton.addEventListener("click", function () {
+
+      const updatedText = prompt("Edit your note:", noteContent.textContent);
+
+      if (updatedText !== null && updatedText.trim() !== "") {
+
+         note.text = updatedText.trim();
+
+         noteContent.textContent = note.text;
+
+         localStorage.setItem(
+            "wardStayNotes",
+            JSON.stringify(notes)
+         );
+      }
+
+   });
+
+   const deleteButton = document.createElement("button");
+   deleteButton.textContent = "Delete";
+
+   deleteButton.addEventListener("click", function () {
+
+      const noteIndex = notes.indexOf(note);
+
+      if (noteIndex !== -1) {
+         notes.splice(noteIndex, 1);
+      }
+
+      localStorage.setItem(
+         "wardStayNotes",
+         JSON.stringify(notes)
+      );
+
+      newNote.remove();
+   });
+
+   newNote.appendChild(noteDate);
+   newNote.appendChild(noteContent);
+   newNote.appendChild(editButton);
+   newNote.appendChild(deleteButton);
+
+   notesList.prepend(newNote);
+
+}
+saveNoteButton.addEventListener("click", function () {
+
+   const noteText = noteInput.value.trim();
+
+   if (noteText === "") {
+      return;
+   }
+   const note = {
+      text: noteText,
+      date: new Date().toLocaleString("en-MY")
+   };
+
+   notes.push(note);
+
+   localStorage.setItem("wardStayNotes", JSON.stringify(notes));
+
+   showNote(note);
+
+   noteInput.value = "";
+
+});
+// Display previously saved notes when WardStay loads
+notes.forEach(function (note) {
+   showNote(note);
+});
+
+/* ---------- PATIENT NAME ---------- */
+const patientNameDisplay = document.getElementById("patientName");
+const patientNameEditInput = document.getElementById("patientNameEditInput");
+const savePatientNameBtn = document.getElementById("savePatientNameBtn");
+
+const topbarPatientName = document.getElementById("topbarPatientName");
+
+savePatientNameBtn.addEventListener("click", function () {
+
+   const updatedName = patientNameEditInput.value.trim();
+
+   if (updatedName === "") {
+      return;
+   }
+
+   patientNameDisplay.textContent = updatedName;
+
+   topbarPatientName.textContent = updatedName;
+
+   localStorage.setItem("wardStayPatientName", updatedName);
+});
+
+const savedPatientName = localStorage.getItem("wardStayPatientName");
+
+if (savedPatientName !== null) {
+   patientNameDisplay.textContent = savedPatientName;
+
+   topbarPatientName.textContent = savedPatientName;
+}
+
+
+/* ---------- MEDICATION VIEW ---------- */
+const medStatus1 = document.getElementById("medStatus1");
+const markTakenBtn1 = document.getElementById("markTakenBtn1");
+
+markTakenBtn1.addEventListener("click", function () {
+
+   if (medStatus1.textContent === "Pending") {
+      medStatus1.textContent = "Taken";
+   } else {
+      medStatus1.textContent = "Pending";
+   }
+
+   localStorage.setItem(
+      "wardStayMedStatus1",
+      medStatus1.textContent
+   );
+});
+
+const savedMedStatus1 = localStorage.getItem("wardStayMedStatus1");
+
+if (savedMedStatus1 !== null) {
+   medStatus1.textContent = savedMedStatus1;
+}

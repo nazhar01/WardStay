@@ -7,7 +7,15 @@ body {
     padding: 30px;
     color: #333333;
     /* CHANGED: Soft charcoal text for smoother reading */
+
+    /* Soft sage dotted background */
+    background-image:
+        radial-gradient(rgba(90, 122, 104, 0.25) 1.5px,
+            transparent 1.5px);
+
+    background-size: 22px 22px;
 }
+
 
 .app-container {
     max-width: 1000px;
@@ -78,6 +86,7 @@ h1 {
     border-radius: 28px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
+
 
 .card-grid {
     display: grid;
@@ -210,8 +219,132 @@ button:hover {
     padding: 24px;
 }
 
+/* PATIENT IDENTITY HEADER */
+
+.dashboard-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    padding: 14px 4px 24px;
+    margin-bottom: 28px;
+
+    border-bottom: 2px solid #A3BF9E;
+}
+
+.patient-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.header-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    color: #5A7A68;
+}
+
+.patient-identity h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #2D3A34;
+}
+
+.patient-meta {
+    display: flex;
+    gap: 28px;
+}
+
+.patient-meta div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.meta-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #718579;
+}
+
+.patient-meta strong {
+    color: #2D3A34;
+}
+
+.patient-status-badge {
+    background-color: #E1EEE3;
+    color: #34754A;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
 /* VIEW CONTROL */
 
 .hidden {
     display: none;
+}
+
+/* CAREGIVER NOTES */
+
+.note-card {
+    background-color: #F4F3EF;
+    padding: 20px;
+    border-radius: 16px;
+    margin-top: 16px;
+    border-left: 3px solid #5A7A68;
+}
+
+.note-card small {
+    color: #5A7A68;
+}
+
+.note-card p {
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.note-card button {
+    margin-top: 8px;
+}
+
+/* ADMISSION SUMMARY */
+
+.admission-summary {
+    padding: 28px 34px;
+}
+
+.admission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.admission-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admission-item span {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #5A7A68;
+    font-weight: bold;
+}
+
+.admission-item strong {
+    font-size: 15px;
+    color: #2D3A34;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 850px) {
+    .admission-grid {
+        grid-template-columns: 1fr;
+    }
 }

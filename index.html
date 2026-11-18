@@ -34,25 +34,58 @@
         <main class="main-content">
 
             <!-- TOP BAR -->
-            <header class="dashboard-topbar">
-                <div><strong>Patient:</strong> <span>Faridah Binti Haji Zarkashi</span></div>
-                <div><strong>Ward:</strong> <span>5A</span></div>
-                <div><strong>Room:</strong> <span>A-12</span></div>
-                <div><strong>Status:</strong> <span class="status-normal">● Stable</span></div>
-            </header>
 
+            <!-- PATIENT IDENTITY HEADER -->
+            <header class="dashboard-topbar">
+
+                <div class="patient-identity">
+                    <span class="header-label">WARDSTAY / PATIENT WORKSPACE</span>
+                    <span id="topbarPatientName">Amelia Rahman</span>
+                </div>
+
+                <div class="patient-meta">
+                    <div>
+                        <span class="meta-label">WARD</span>
+                        <strong>5A</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">ROOM</span>
+                        <strong>A-12</strong>
+                    </div>
+                </div>
+
+                <span class="patient-status-badge">● Stable</span>
+
+            </header>
 
             <!-- DASHBOARD WORKSPACE -->
             <section class="dashboard-content" id="dashboardView">
 
-                <!-- PATIENT OVERVIEW -->
-                <section class="hero-card">
-                    <div class="section-tag">Patient Overview</div>
+                <!-- PATIENT ADMISSION SUMMARY -->
+                <section class="hero-card admission-summary">
 
-                    <p><strong>Patient Name:</strong>Faridah Binti Haji Zarkashi</p>
-                    <p><strong>Date of Admission:</strong> 5th December 2025</p>
-                    <p><strong>Reason for Admission:</strong> Hysterectomy </p>
-                    <p><strong>Scheduled Operation Date:</strong> 7th December 2025 </p>
+                    <div class="section-tag">Admission & Care Details</div>
+
+                    <div class="admission-grid">
+
+                        <div class="admission-item">
+                            <span>DATE OF ADMISSION</span>
+                            <strong>5 December 2025</strong>
+                        </div>
+
+                        <div class="admission-item">
+                            <span>REASON FOR ADMISSION</span>
+                            <strong>Hysterectomy</strong>
+                        </div>
+
+                        <div class="admission-item">
+                            <span>SCHEDULED OPERATION</span>
+                            <strong>7 December 2025</strong>
+                        </div>
+
+                    </div>
+
                 </section>
 
                 <!-- DASHBOARD CARDS -->
@@ -134,11 +167,20 @@
 
             <!-- PATIENT VIEW -->
             <section class="patient-view hidden" id="patientView">
+                <label for="patientNameEditInput">
+                    Edit Patient Name
+                </label>
+
+                <input type="text" id="patientNameEditInput" placeholder="Enter patient's name">
+
+                <button id="savePatientNameBtn">
+                    Save Name
+                </button>
 
                 <div class="hero-card">
                     <div class="section-tag">Patient Details</div>
 
-                    <h2>Faridah Binti Haji Zarkashi</h2>
+                    <h2 id="patientName">Amelia Rahman</h2>
 
                     <p><strong>Ward:</strong> 5A</p>
                     <p><strong>Room:</strong> A-12</p>
@@ -150,14 +192,16 @@
 
             <!-- MEDICATION VIEW -->
             <section class="medication-view hidden" id="medicationView">
+                <span id="medStatus1">Pending</span>
+                <button id="markTakenBtn1">Mark Taken</button>
 
                 <div class="hero-card">
                     <div class="section-tag">Medication Tracker</div>
 
                     <h2>Patient Medication</h2>
-                    <p><strong>Medication:</strong> [Medication Name]</p>
-                    <p><strong>Purpose:</strong> [Medication Purpose]</p>
-                    <p><strong>Schedule:</strong> [Morning / Afternoon / Night]</p>
+                    <p><strong>Medication:</strong> Metropolol </p>
+                    <p><strong>Purpose:</strong> Reduces blood pressure </p>
+                    <p><strong>Schedule:</strong> Morning</p>
 
                 </div>
 
@@ -172,8 +216,11 @@
                     <h2>Patient Care Notes</h2>
                     <p>Record important observations and reminders.</p>
 
-                    <textarea placeholder="Write your notes here..."></textarea>
-                    <button>Save Notes</button>
+                    <textarea id="noteInput" placeholder="Write your notes here..."></textarea>
+                    <button id="saveNoteBtn">Save Notes</button>
+
+                    <div id="notesList"></div>
+
                 </div>
 
             </section>
